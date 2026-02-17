@@ -662,7 +662,3 @@ blocks you have at your disposal, taking advantage of the speed and control hand
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use"><b>&lt;use&gt;</b> element reference</li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol"><b>&lt;symbol&gt;</b> element reference</li>
 </ul>
-
-
-
-

@@ -1,5 +1,6 @@
+<!-- from: https://webdesign.tutsplus.com/how-to-hand-code-svg--cms-30368t -->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<h2>Basic SVG Elements</h2>
+<h2><a href="https://webdesign.tutsplus.com/c/htmlcss/s/svg">Basic SVG Elements</a></h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>You can get into a lot of complexity with SVG, but that’s not necessary for the icons we’ll be 
 making. The following list covers the building blocks we’ll need.</p>
@@ -16,7 +17,7 @@ making. The following list covers the building blocks we’ll need.</p>
   <li><b>&lt;defs&gt;</b> Defines reusable assets. Nothing placed inside this <b>&lt;defs&gt;</b> 
     section is visible initially. <b>&lt;defs&gt;</b> is to a scalable vector graphic what the 
 	<b>&lt;head&gt;</b> element is to a web page.</li>
-  <li><b>&lt;g&gt;</b> Wraps multiple shapes into a group. Place groups in the &lt;defs&gt; section 
+  <li><b>&lt;g&gt;</b> Wraps multiple shapes into a group. Place groups in the <b>&lt;defs&gt;</b> section 
     to enable them to be reused.</li>
   <li><b>&lt;symbol&gt;</b> Like a group, but with some extra features. Typically placed in the 
     <b>&lt;defs&gt;</b> section.</li>
@@ -46,25 +47,25 @@ following:</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>Quick Primer on x and y Values</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<p>When working in 2D space on a website, the horizontal axis is represented by x and the vertical 
-axis is represented by y. Positions along each of these axes are represented by numbers. If we want 
-to move something to the right, we’ll need to use increasing x values, and to move to the left we’ll 
-use decreasing x values. Likewise, to move something down we’ll use increasing y values, and to move 
-something up we’ll use decreasing y values.</p>
+<p>When working in 2D space on a website, the horizontal axis is represented by <b>x</b> and the 
+vertical axis is represented by <b>y</b>. Positions along each of these axes are represented by 
+numbers. If we want to move something to the right, we’ll need to use increasing <b>x</b> values, 
+and to move to the left we’ll use decreasing <b>x</b> values. Likewise, to move something down we’ll 
+use increasing <b>y</b> values, and to move something up we’ll use decreasing <b>y</b> values.</p>
 
-<p>A common shorthand for expressing the x and y values of a single point is (x, y). For example, a 
-point at 10 on the x axis and 50 on the y axis might be written as (10, 50). I’ll use this shorthand 
-from time to time in this tutorial.</p>
+<p>A common shorthand for expressing the <b>x</b> and <b>y</b> values of a single point is <b>(x, y)</b>. 
+For example, a point at <b>10</b> on the <b>x</b> axis and <b>50</b> on the <b>y</b> axis might be 
+written as <b>(10, 50)</b>. I’ll use this shorthand from time to time in this tutorial.</p>
 
 <p>Notice the two darkest lines on our grid? We’re going to place our SVG so its top left corner aligns 
-with the place they intersect. As such, that intersection point will represent the position x = 0 and 
-y = 0 , or (0,0), in our SVG.</p>
+with the place they intersect. As such, that intersection point will represent the position <b>x = 0</b> 
+and <b>y = 0</b>, or <b>(0,0)</b>, in our SVG.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>The Background Grid</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<p>Each of the lightest grid lines represents 10px, and the medium thickness lines represent 100px. 
-So if we wanted to move an object down from one medium thickness line to the next, we’d increase 
-its location on the y axis by one 100px.</p>
+<p>Each of the lightest grid lines represents <b>10px</b>, and the medium thickness lines represent 
+<b>100px</b>. So if we wanted to move an object down from one medium thickness line to the next, 
+we’d increase its location on the y axis by one <b>100px</b>.</p>
 
 <p>If that still sounds a little unclear, don’t worry this will all make sense as we get into the 
 practicalities of creating our SVG icons.</p>
@@ -72,7 +73,8 @@ practicalities of creating our SVG icons.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>Default SVG Styling</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<p>Note that in the starter HTML file there is some included CSS with default styling for our soon-to-be-created SVG icons:</p>
+<p>Note that in the starter HTML file there is some included CSS with default styling for our 
+soon-to-be-created SVG icons:</p>
 
 ```
 svg {
@@ -85,14 +87,12 @@ svg {
 ```
 
 <p>This will set our icons to have no fills, and black 5px wide strokes with rounded caps and joins.</p>
-
-
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>1. Setup the SVG</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>The first step in creating any SVG is to lay down an <b>&lt;svg&gt;&lt;/svg&gt;</b> element. 
 Anything you want your SVG to display will have to be between these tags. There are a few attributes 
-you can use on this element, but we’ll keep things simple and just use width and height.</p>
+you can use on this element, but we’ll keep things simple and just use <b>width</b> and <b>height</b>.</p>
 
 <p>Add the following code in the <b>&lt;body&gt;</b> section of your HTML document:</p>
 
@@ -102,7 +102,7 @@ you can use on this element, but we’ll keep things simple and just use width a
 ```
 
 <blockquote>
-The CSS in our starter file is going to offset this SVG down and to the right by 100px so its top 
+The CSS in our starter file is going to offset this SVG down and to the right by <b>100px</b> so its top 
 left corner will be positioned at the intersection point of the two darkest lines on our background 
 grid. And the values in the CodePen demos throughout this tutorial may differ slightly too–but feel 
 free to play around with them.
@@ -125,8 +125,7 @@ free to play around with them.
 </ul>
 
 <p>To summarize the above, you use the <b>x1</b> and <b>y1</b> attributes to set where the line 
-begins, and the 
-<b>x2</b> and <b>y2</b> attributes to set where the line ends.</p>
+begins, and the <b>x2</b> and <b>y2</b> attributes to set where the line ends.</p>
 
 <p>Let’s create the first line of our icon, the one at the top. We’re going to make the line <b>45px</b> 
 long, however the <b>5px</b> stroke we’re using is going to add some extra pixels around the outside of 
@@ -230,12 +229,12 @@ moving onto the next icon.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>4. Create a “Browser” Icon</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<p>Now we have lines down pat, let’s create some shapes, starting with a rectangle (&lt;rect&gt;). We’re 
-going to use it in conjunction with a couple of <line>s to create a browser icon.</p>
+<p>Now we have lines down pat, let’s create some shapes, starting with a rectangle (<b>&lt;rect&gt;</b>). 
+We’re going to use it in conjunction with a couple of <b>&lt;line&gt;</b>s to create a browser icon.</p>
 
 <!-- svg-image-4.png -->
 
-<p>Rectangles and squares can be created with the <rect> element, which has four attributes you’ll 
+<p>Rectangles and squares can be created with the <b>&lt;rect&gt;</b> element, which has four attributes you’ll 
 need to provide:</p>
 
 <ul>
@@ -245,11 +244,11 @@ need to provide:</p>
   <li><b>height</b> height of the shape</li>
 </ul>
 
-<p>You can also use the attributes rx and ry to create rounded corners if you’d like.</p>
+<p>You can also use the attributes <b>rx</b> and <b>ry</b> to create rounded corners if you’d like.</p>
 
-<p>We’re going to create a rectangle with its top left corner offset by 3px in both directions, 
-again to avoid clipping the stroke, so we’ll use the attributes x="3" y="3". We want it to be 
-80px wide by 60px high, so we’ll also use the attributes width="80" height="60".</p>
+<p>We’re going to create a rectangle with its top left corner offset by <b>3px</b> in both directions, 
+again to avoid clipping the stroke, so we’ll use the attributes <b>x="3" y="3"</b>. We want it to be 
+<b>80px</b> wide by <b>60px</b> high, so we’ll also use the attributes <b>width="80" height="60"</b>.</p>
 
 <p>As such our full rectangle code should be:</p>
 
@@ -278,11 +277,11 @@ their values around a little bit so you can see how they’re working in this ic
 <h2>5. Create an “Alert” Icon</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Now that we have rectangles creation under control, let’s try out using <b>&lt;ellipse&gt;</b>s. 
-We’re going to use two of them, along with a <line>, to create this alert icon:</p>
+We’re going to use two of them, along with a <b>&lt;line&gt;</b>, to create this alert icon:</p>
 
 <!-- svg-image-5.png -->
 
-<p>Like rectangles, the <ellipse> element also requires four attributes, however they are a little 
+<p>Like rectangles, the <b>&lt;ellipse&gt;</b> element also requires four attributes, however they are a little 
 different to those of rectangles. Instead of using width and height we set a horizontal and vertical 
 radius. And instead of positioning the top left corner of the shape, we position its center:</p>
 
@@ -295,13 +294,13 @@ radius. And instead of positioning the top left corner of the shape, we position
     half. Think “ry for radius y”.</li>
 </ul>
 
-<p>We want a perfectly round circle that’s 80px wide by 80px high, which means we need its radius 
-to be 40px on both axes. We’ll set this with the attributes rx="40" ry="40".</p>
+<p>We want a perfectly round circle that’s 80px wide by <b>80px</b> high, which means we need its radius 
+to be 40px on both axes. We’ll set this with the attributes <b>rx="40" ry="40"</b>.</p>
 
 <p>We also want the circle to sit flush with the darkest lines on our graph. Given that our circle 
-will be 80px wide and high, that would place its center point at 40px. We also need to allow for 
-our 3px offset to avoid clipping however, so that means our circle’s center point should be a 43px 
-on both axis. We’ll set this with the attributes cx="43" cy="43".</p>
+will be <b>80px</b> wide and high, that would place its center point at <b>40px</b>. We also need 
+to allow for our <b>3px</b> offset to avoid clipping however, so that means our circle’s center 
+point should be a <b>43px</b> on both axis. We’ll set this with the attributes <b>cx="43" cy="43"</b>.</p>
 
 <p>Putting all that together, we get this code:</p>
 
@@ -321,7 +320,7 @@ to set the fill to black:</p>
 
 <p>Finally, we just need to add a line to create the other part of the exclamation mark. Once again 
 we’re using the same techniques as with the other lines we’ve used so far, with the only difference 
-being we’ll use an inline style to thicken this stroke width up from 5px to 8px.</p>
+being we’ll use an inline style to thicken this stroke width up from <b>5px</b> to <b>8px</b>.</p>
 
 <p>The completed code for our alert icon is as follows:</p>
 
@@ -331,12 +330,14 @@ being we’ll use an inline style to thicken this stroke width up from 5px to 8p
 <h2>6. Create a “Play” Icon</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Now we have the hang of the relatively fixed shapes of rectangles and ellipses, we’re ready to 
-roll our own shapes using the <polygon> element. We can create any multi-sided shape we want with 
-this, from octagons to stars. However we’ll keep things straight forward for now and create a triangle. 
-We’ll combine it with an <ellipse> to create a play icon:</p>
+roll our own shapes using the <b>&lt;polygon&gt;</b> element. We can create any multi-sided shape we 
+want with this, from octagons to stars. However we’ll keep things straight forward for now and create 
+a triangle. We’ll combine it with an <b>&lt;ellipse&gt;</b> to create a play icon:</p>
+
+<!-- image -->
 
 <p>The &lt;polygon&gt; element is almost identical to the <b>&lt;polyline&gt;</b> element. It too has just one 
-attribute, points, in which you use pairs of values to set each point that makes up the shape. The 
+attribute, <b>points</b>, in which you use pairs of values to set each point that makes up the shape. The 
 difference is that while a polyline will remain open, a polygon will automatically close itself.</p>
 
 <p>Let’s start by getting the circle down that our polygon will sit inside of. We’ll use the exact same 
@@ -347,8 +348,8 @@ ellipse we did in our alert icon:</p>
 ```
 
 <p>Now let’s create our polygon. We’re going to place three points, and lines will automatically
-be generated between these points to create a triangle. The points will be (35,23), (60,43) and 
-(35,63). As such our polygon’s code will be:</p>
+be generated between these points to create a triangle. The points will be <b>(35,23)</b>, 
+<b>(60,43)</b> and <b>(35,63)</b>. As such our polygon’s code will be:</p>
 
 ```
 <polygon points="35 23, 60 43, 35 63" />
@@ -362,7 +363,7 @@ be generated between these points to create a triangle. The points will be (35,2
 <h2>7. Create a “Download” Icon</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p>Now we’ll move onto the most potentially complex, but simultaneously most flexible means of producing 
-SVG shapes, and that is the <path> element. Creating a path is a little like creating a polygon, 
+SVG shapes, and that is the <b>&lt;path&gt;</b> element. Creating a path is a little like creating a polygon, 
 where you lay out your shape a piece at a time. However with a path you directly create each point 
 and line yourself without automation, and you also have the option to create curves between points 
 instead of straight lines.</p>
@@ -376,22 +377,30 @@ we’re going to focus on a small subset of path functionality, and use it to cr
 <p>Technically, you could create the above shape with a polygon, but this arrow will give us a good way 
 to get across how the path element works.</p>
 
-<p>We’ll be using only one of the attributes of <path>, and that is d. The d stands for “data”, and it’s 
-in here you’ll define all the points and lines of your path. Within this attribute, commands to set the 
-points of a path and create lines between them are provided via single letters such as M or L, followed 
-by a set of x and / or y coordinates.</p>
+<p>We’ll be using only one of the attributes of <b>&lt;path&gt;</b>, and that is <b>d</b>. The <b>d</b> 
+stands for “data”, and it’s in here you’ll define all the points and lines of your path. Within this 
+attribute, commands to set the points of a path and create lines between them are provided via single 
+letters such as <b>M</b> or <b>L</b>, followed by a set of <b>x</b> and / or <b>y</b> coordinates.</p>
 
-<p>There are several of these commands, but to give you an intro to working with <path> we’ll stick to a few that can be realistically used when hand coding. They are as follows:</p>
+<p>There are several of these commands, but to give you an intro to working with <path> we’ll stick 
+to a few that can be realistically used when hand coding. They are as follows:</p>
 
 <ul>
-  <li><b>M</b> Represents moveto. It starts a new path at a given position, defined with x and y values. Imagine this is like hovering your mouse over a point on your canvas, ready to draw. The capital M indicates moving to an absolute set of coordinates. (Lower case m would indicate relative coordinates).</li>
-  <li><b>L</b> Represents lineto. Draw a line from the current position to a new position. The capital L indicates moving to an absolute set of coordinates. (Lower case l would indicate relative coordinates).</li>
-  <li><b>Z</b> Represents closepath. It converts the path into a closed shape by drawing a straight line between the current point to the first point created in the path.</li>
+  <li><b>M</b> Represents <b>moveto</b>. It starts a new path at a given position, defined with 
+    <b>x</b> and <b>y</b> values. Imagine this is like hovering your mouse over a point on your 
+	canvas, ready to draw. The capital <b>M</b> indicates moving to an absolute set of coordinates. 
+	(Lower case <b>m</b> would indicate relative coordinates).</li>
+  <li><b>L</b> Represents <b>lineto</b>. Draw a line from the current position to a new position. The 
+    capital <b>L</b> indicates moving to an absolute set of coordinates. (Lower case <b>l</b> would 
+	indicate relative coordinates).</li>
+  <li><b>Z</b> Represents <b>closepath</b>. It converts the path into a closed shape by drawing a straight 
+    line between the current point to the first point created in the path.</li>
 </ul>
 
 <p>You should definitely view these three commands, (and the icon we’ll create with them), as an 
-introductory primer to the <path> element. To really get the most out of it you’ll want to familiarize 
-yourself with all the commands at your disposal.</p>
+introductory primer to the <b>&lt;path&gt;</b> element. To really get the most out of it you’ll want 
+to familiarize yourself with <a href="https://www.w3.org/TR/SVG/paths.html#DAttribute">
+all the commands at your disposal</a>.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>Code Your Download Icon</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -407,19 +416,19 @@ yourself with all the commands at your disposal.</p>
 see how it is created. I also recommend putting each command on its own line for readability.</p>
 
 <ol>
-  <li>First, we want to move to (18,3), the point at which we want our arrow to begin. To do this 
-    we’ll add the command M 18 3 to our path’s d attribute.</li>
-  <li>Next we want to use the L command to create a line that draws from our path’s starting point 
-    along the x axis for 28px. To do that let’s add our second command: L 46 3. Check your preview 
-	and you should see a small horizontal line.</li>
-  <li>Now let’s draw a line straight down for 37px by adding L 46 40.</li>
-  <li>Then straight to the right by 15px with L 61 40</li>
+  <li>First, we want to move to <b>(18,3)</b>, the point at which we want our arrow to begin. To do this 
+    we’ll add the command <b>M 18 3</b> to our path’s <b>d</b> attribute.</li>
+  <li>Next we want to use the <b>L</b> command to create a line that draws from our path’s starting point 
+    along the <b>x</b> axis for <b>28px</b>. To do that let’s add our second command: <b>L 46 3</b>. 
+	Check your preview and you should see a small horizontal line.</li>
+  <li>Now let’s draw a line straight down for <b>37px</b> by adding <b>L 46 40</b>.</li>
+  <li>Then straight to the right by <b>15px</b> with <b>L 61 40</b></li>
   <li>Next up we have to begin creating the arrow point. We need to draw a line diagonally down and 
-    to the left. We’ll do this with L 32 68.</li>
-  <li>And then we’ll have a line go diagonally back up and to the left with L 3 40.</li>
-  <li>Now we’ll finish our arrow head by drawing a little ways to the right again with L 18 40.</li>
+    to the left. We’ll do this with <b>L 32 68</b>.</li>
+  <li>And then we’ll have a line go diagonally back up and to the left with <b>L 3 40</b>.</li>
+  <li>Now we’ll finish our arrow head by drawing a little ways to the right again with <b>L 18 40</b>.</li>
   <li>To close our shape we don’t need to specify a point to draw a line to. All we need to do is add 
-    the Z command, which will automatically close our shape for us.</li>
+    the <b>Z</b> command, which will automatically close our shape for us.</li>
 </ol>
 
 <p>Your final arrow path code should look like this:</p>
@@ -468,8 +477,8 @@ explicitly use them.</p>
 into symbols. We’ll turn the first half of the icons into groups, and the second half into 
 symbols so we can illustrate the difference.</p>
 
-<p>To convert one of our icons into a group all we have to do is wrap it with <g></g> tags. To 
-make that group usable we also need to give it a unique ID.</p>
+<p>To convert one of our icons into a group all we have to do is wrap it with <b>&lt;g&gt;&lt;/g&gt;</b> 
+tags. To make that group usable we also need to give it a unique ID.</p>
 
 <p>For example:</p>
 
@@ -483,7 +492,8 @@ make that group usable we also need to give it a unique ID.</p>
 </g>
 ```
 
-<p>Wrap each of your first three icons with <g></g> tags and add unique IDs, like so:</p>
+<p>Wrap each of your first three icons with <b>&lt;g&gt;&lt;/g&gt;</b> tags and add unique IDs, 
+like so:</p>
 
 ```
 <g id="leftalign">
@@ -512,9 +522,10 @@ make that group usable we also need to give it a unique ID.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2>10. Place Groups With <b>&lt;use&gt;</b></h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<p>We now have three icons defined as groups in our &lt;defs&gt; element, so we’re ready to use 
-them in our SVG. To achieve this, all we need to do is add a <use> element, (being sure to add it 
-after and outside the <defs> element), and set an href attribute to target the desired icon’s ID.</p>
+<p>We now have three icons defined as groups in our <b>&lt;defs&gt;</b> element, so we’re ready to 
+use them in our SVG. To achieve this, all we need to do is add a <b>&lt;use&gt;</b> element, (being 
+sure to add it after and outside the <b>&lt;defs&gt;</b> element), and set an href attribute to 
+target the desired icon’s ID.</p>
 
 <p>For example, to use the left align icon add this code:</p>
 
@@ -547,14 +558,15 @@ ratio.</p>
 
 <p>This can be very useful if you want to do things like centering the icons we’ve created so far. 
 We’ll turn the remaining three icons into symbols, then adjust them so they’ll vertically fill a 
-100px high space, and be horizontally centered in that space.</p>
+<b>100px</b> high space, and be horizontally centered in that space.</p>
 
 <p>We create our symbols in the same way as our groups, only we’ll be wrapping each of our last 
-three icons’ code in <symbol></symbol> tags. We’ll also need to add a unique ID to each.</p>
+three icons’ code in <b>&lt;symbol&gt;&lt;/symbol&gt;</b> tags. We’ll also need to add a unique ID 
+to each.</p>
 
-<p>However what we’re also going to add is a viewBox attribute. This will let us define what the 
-visible portion of each symbol should be. When the browser has access to this information it can 
-then scale and align symbols correctly.</p>
+<p>However what we’re also going to add is a <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox"><b>viewBox</b> attribute</a>. 
+This will let us define what the visible portion of each symbol should be. When the browser has access 
+to this information it can then scale and align symbols correctly.</p>
 
 <p>We’ll need to give our <b>viewBox</b> attribute four values. The first two will define the top 
 left point of our icon, and the third and fourth define its width and height respectively.</p>
@@ -618,10 +630,9 @@ provide each with width and height attributes set to <b>100</b>:</p>
 
 <!-- svg-image-9.png -->
 
-<p>Try applying width and height attributes to the <use> elements of one of your group based icons.
-You’ll notice that nothing changes. This is because the browser relies on viewBox values, (which 
-a group cannot have), in order to know how to scale the icons.</p>
-
+<p>Try applying <b>width</b> and <b>height</b> attributes to the <b>&lt;use&gt;</b> elements of one 
+of your group based icons. You’ll notice that nothing changes. This is because the browser relies on 
+<b>viewBox</b> values, (which a group cannot have), in order to know how to scale the icons.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h3>Wrapping Up</h3>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
